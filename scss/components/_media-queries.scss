@@ -1,0 +1,37 @@
+@media (min-width: 768px) {
+  body {
+    .content-wrapper {
+      nav {
+        padding: 10px;
+        position: fixed;
+        left: 0px;
+        width: $nav-width;
+        top: 0;
+        height: 100%;
+        ul {
+          margin-top: $nav-margin;
+          border: 0 none;
+          display: block;
+          background: transparent;
+          position: initial;
+        }
+        .toggle-menu {
+          display: none;
+        }
+      }
+
+      .inner-content-wrapper {
+        margin-left: $nav-width;
+        .logo-wrapper {
+          margin-top: $logo-margin;
+          img {
+            width: $logo-width;
+          }
+        }
+        .content {
+          padding: 0 4em;
+        }
+      }
+    }
+  }
+}

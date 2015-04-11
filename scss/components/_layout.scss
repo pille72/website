@@ -1,0 +1,102 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $body-bg;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  .content-wrapper {
+    .inner-content-wrapper {
+      .logo-wrapper {
+        text-align: center;
+        img {
+          width: $logo-width;
+        }
+      }
+      .content {
+        color: $body-text-color;
+        padding: 1em;
+        .page {
+          display: none;
+          .opening {
+            h2 {
+              display: inline;
+              font-size: 10em;
+              margin-top: 0;
+              margin-bottom: 300px;
+              transition: font-size 3s ease;
+            }
+
+            &.done {
+              h2 {
+                display: inline;
+                font-size: 3em;
+                margin-bottom: 2em;
+              }
+            }
+          }
+
+          &:first-child {
+            display: block;
+          }
+        }
+      }
+    }
+
+    nav {
+      background-color: $nav-bg;
+      color: $nav-text-color;
+      height: $nav-height;
+      position: relative;
+
+      .avatar {
+        border-radius: 50%;
+        width: 70px;
+        margin-left: 5px;
+      }
+
+      .toggle-menu {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: $nav-text-color;
+        font-size: 2em;
+      }
+      ul {
+        background-color: $nav-bg;
+        margin: 0;
+        padding: 0 0;
+        position: absolute;
+        width: 100%;
+        top: $nav-height;
+        display: none;
+        &.open {
+          display: block;
+        }
+        li {
+          list-style-type: none;
+          cursor: pointer;
+          text-align: center;
+          margin-bottom: 2em;
+          a {
+            display: block;
+            color: $nav-text-color;
+            text-decoration: none;
+            i {
+              font-size: 4em;
+            }
+            > span {
+              font-size: 1em;
+              display: block;
+            }
+            &:focus, &:active, &:visited {
+              color: $nav-text-color;
+            }
+          }
+        }
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
