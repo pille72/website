@@ -2908,143 +2908,217 @@ body {
   margin: 0;
   font-size: 16px;
 }
-/* line 9, scss/components/_layout.scss */
+/* line 7, scss/components/_layout.scss */
+body #top {
+  display: none;
+}
+/* line 13, scss/components/_layout.scss */
+body #main.open nav.primary {
+  top: 0;
+}
+/* line 19, scss/components/_layout.scss */
+body .content-wrapper {
+  color: white;
+}
+/* line 21, scss/components/_layout.scss */
+body .content-wrapper .inner-content-wrapper {
+  padding: 1em;
+}
+/* line 23, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .logo-wrapper {
   text-align: center;
+  color: white;
+  margin: 2em 0;
 }
-/* line 11, scss/components/_layout.scss */
+/* line 27, scss/components/_layout.scss */
+body .content-wrapper .inner-content-wrapper .logo-wrapper > div {
+  margin-top: 0.5em;
+  font-size: 2em;
+}
+/* line 31, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .logo-wrapper img {
   width: 150px;
 }
-/* line 15, scss/components/_layout.scss */
+/* line 35, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .content {
   color: white;
-  padding: 1em;
 }
-/* line 18, scss/components/_layout.scss */
-body .content-wrapper .inner-content-wrapper .content .page {
-  display: none;
+/* line 37, scss/components/_layout.scss */
+body .content-wrapper .inner-content-wrapper .content .toggle-menu-wrapper {
+  position: relative;
+  z-index: 99999;
 }
-/* line 21, scss/components/_layout.scss */
+/* line 40, scss/components/_layout.scss */
+body .content-wrapper .inner-content-wrapper .content .toggle-menu-wrapper .toggle-menu {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+/* line 49, scss/components/_layout.scss */
+body .content-wrapper .inner-content-wrapper .content .page section {
+  font-size: 1.2em;
+}
+/* line 53, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .content .page .opening h2 {
-  display: inline;
-  font-size: 10em;
+  font-size: 2em;
   margin-top: 0;
-  margin-bottom: 300px;
   transition: font-size 3s ease;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
-/* line 30, scss/components/_layout.scss */
+/* line 63, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .content .page .opening.done h2 {
   display: inline;
   font-size: 3em;
-  margin-bottom: 2em;
 }
-/* line 38, scss/components/_layout.scss */
+/* line 70, scss/components/_layout.scss */
 body .content-wrapper .inner-content-wrapper .content .page:first-child {
   display: block;
 }
-/* line 45, scss/components/_layout.scss */
-body .content-wrapper nav {
+/* line 77, scss/components/_layout.scss */
+body .content-wrapper nav.primary {
   background-color: #222430;
   color: white;
-  height: 80px;
-  position: relative;
+  width: 100%;
+  position: absolute;
+  top: -2000px;
+  transition: top 500ms ease-in-out;
+  padding-top: 65px;
 }
-/* line 51, scss/components/_layout.scss */
-body .content-wrapper nav .avatar {
+/* line 86, scss/components/_layout.scss */
+body .content-wrapper nav.primary .avatar {
   border-radius: 50%;
   width: 70px;
   margin-left: 5px;
 }
-/* line 57, scss/components/_layout.scss */
-body .content-wrapper nav .toggle-menu {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  color: white;
-  font-size: 2em;
-}
-/* line 64, scss/components/_layout.scss */
-body .content-wrapper nav ul {
+/* line 92, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul {
   background-color: #222430;
   margin: 0;
   padding: 0 0;
-  position: absolute;
   width: 100%;
-  top: 80px;
-  display: none;
 }
-/* line 72, scss/components/_layout.scss */
-body .content-wrapper nav ul.open {
-  display: block;
-}
-/* line 75, scss/components/_layout.scss */
-body .content-wrapper nav ul li {
+/* line 97, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul li {
   list-style-type: none;
   cursor: pointer;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1.2em;
 }
-/* line 80, scss/components/_layout.scss */
-body .content-wrapper nav ul li a {
+/* line 102, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul li a {
   display: block;
   color: white;
   text-decoration: none;
 }
-/* line 84, scss/components/_layout.scss */
-body .content-wrapper nav ul li a i {
+/* line 106, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul li a i {
   font-size: 4em;
 }
-/* line 87, scss/components/_layout.scss */
-body .content-wrapper nav ul li a > span {
+/* line 109, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul li a > span {
   font-size: 1em;
   display: block;
 }
-/* line 91, scss/components/_layout.scss */
-body .content-wrapper nav ul li a:focus, body .content-wrapper nav ul li a:active, body .content-wrapper nav ul li a:visited {
+/* line 113, scss/components/_layout.scss */
+body .content-wrapper nav.primary ul li a:focus, body .content-wrapper nav.primary ul li a:active, body .content-wrapper nav.primary ul li a:visited {
   color: white;
 }
-/* line 97, scss/components/_layout.scss */
-body .content-wrapper nav img {
+/* line 119, scss/components/_layout.scss */
+body .content-wrapper nav.primary img {
   width: 80px;
+}
+/* line 124, scss/components/_layout.scss */
+body .content-wrapper nav.secondary {
+  position: fixed;
+  right: 10px;
+  top: 45%;
+}
+/* line 129, scss/components/_layout.scss */
+body .content-wrapper nav.secondary ul li {
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+/* line 132, scss/components/_layout.scss */
+body .content-wrapper nav.secondary ul li a {
+  display: block;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  text-decoration: none;
+}
+/* line 140, scss/components/_layout.scss */
+body .content-wrapper nav.secondary ul li a.active {
+  background-color: white;
+  border-color: white;
 }
 
 @media (min-width: 768px) {
-  /* line 4, scss/components/_media-queries.scss */
-  body .content-wrapper nav {
+  /* line 5, scss/components/_media-queries.scss */
+  body #main.open nav.primary {
+    display: block;
+    left: 0;
+  }
+  /* line 9, scss/components/_media-queries.scss */
+  body #main.open .toggle-menu-wrapper {
+    display: block;
+  }
+  /* line 15, scss/components/_media-queries.scss */
+  body .content-wrapper nav.primary {
     padding: 10px;
     position: fixed;
-    left: 0px;
+    left: -160px;
     width: 80px;
     top: 0;
     height: 100%;
+    transition: left 500ms ease-in-out;
+    display: block;
+    z-index: 999;
   }
-  /* line 11, scss/components/_media-queries.scss */
-  body .content-wrapper nav ul {
+  /* line 25, scss/components/_media-queries.scss */
+  body .content-wrapper nav.primary ul {
     margin-top: 20px;
     border: 0 none;
     display: block;
     background: transparent;
     position: initial;
   }
-  /* line 18, scss/components/_media-queries.scss */
-  body .content-wrapper nav .toggle-menu {
+  /* line 31, scss/components/_media-queries.scss */
+  body .content-wrapper nav.primary ul li {
+    margin-bottom: 3em;
+  }
+  /* line 35, scss/components/_media-queries.scss */
+  body .content-wrapper nav.primary .close-menu {
     display: none;
   }
-  /* line 23, scss/components/_media-queries.scss */
+  /* line 40, scss/components/_media-queries.scss */
   body .content-wrapper .inner-content-wrapper {
-    margin-left: 80px;
+    padding: 0 110px;
   }
-  /* line 25, scss/components/_media-queries.scss */
+  /* line 42, scss/components/_media-queries.scss */
   body .content-wrapper .inner-content-wrapper .logo-wrapper {
-    margin-top: 30px;
+    margin: 0;
   }
-  /* line 27, scss/components/_media-queries.scss */
+  /* line 44, scss/components/_media-queries.scss */
   body .content-wrapper .inner-content-wrapper .logo-wrapper img {
     width: 150px;
   }
-  /* line 31, scss/components/_media-queries.scss */
-  body .content-wrapper .inner-content-wrapper .content {
-    padding: 0 4em;
+  /* line 51, scss/components/_media-queries.scss */
+  body .content-wrapper .inner-content-wrapper .content .page .opening h2 {
+    font-size: 5em;
+    margin: 0;
+  }
+  /* line 57, scss/components/_media-queries.scss */
+  body .content-wrapper .inner-content-wrapper .content .toggle-menu-wrapper {
+    margin-top: 1em;
+  }
+  /* line 60, scss/components/_media-queries.scss */
+  body .content-wrapper .inner-content-wrapper .content a {
+    position: relative;
+    z-index: 1;
   }
 }

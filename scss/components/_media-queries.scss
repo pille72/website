@@ -1,35 +1,66 @@
 @media (min-width: 768px) {
   body {
+    #main {
+      &.open {
+        nav.primary {
+          display: block;
+          left: 0;
+        }
+        .toggle-menu-wrapper {
+          display: block;
+        }
+      }
+    }
     .content-wrapper {
-      nav {
+      nav.primary {
         padding: 10px;
         position: fixed;
-        left: 0px;
+        left: -$nav-width*2;
         width: $nav-width;
         top: 0;
         height: 100%;
+        transition: left 500ms ease-in-out;
+        display: block;
+        z-index: 999;
         ul {
           margin-top: $nav-margin;
           border: 0 none;
           display: block;
           background: transparent;
           position: initial;
+          li {
+            margin-bottom: 3em;
+          }
         }
-        .toggle-menu {
+        .close-menu {
           display: none;
         }
       }
 
       .inner-content-wrapper {
-        margin-left: $nav-width;
+        padding: 0 $nav-width + 30;
         .logo-wrapper {
-          margin-top: $logo-margin;
+          margin: 0;
           img {
             width: $logo-width;
           }
         }
         .content {
-          padding: 0 4em;
+          .page {
+            .opening {
+              h2 {
+                font-size: 5em;
+                margin: 0;
+              }
+            }
+          }
+          .toggle-menu-wrapper {
+            margin-top: 1em;
+          }
+          a {
+            position: relative;
+            z-index: 1;
+          }
         }
       }
     }

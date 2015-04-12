@@ -4,33 +4,65 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
+  #top {
+    display: none;
+  }
+
+  #main {
+    &.open {
+      nav.primary {
+        top: 0;
+      }
+    }
+  }
+
   .content-wrapper {
+    color: $body-text-color;
     .inner-content-wrapper {
+      padding: 1em;
       .logo-wrapper {
         text-align: center;
+        color: $body-text-color;
+        margin: 2em 0;
+        > div {
+          margin-top: 0.5em;
+          font-size: 2em;
+        }
         img {
           width: $logo-width;
         }
       }
       .content {
         color: $body-text-color;
-        padding: 1em;
+        .toggle-menu-wrapper {
+          position: relative;
+          z-index: 99999;
+          .toggle-menu {
+            cursor: pointer;
+            text-decoration: none;
+            color: $nav-text-color;
+            font-size: 2em;
+          }
+        }
+
         .page {
-          display: none;
+          section {
+            font-size: 1.2em;
+          }
           .opening {
             h2 {
-              display: inline;
-              font-size: 10em;
+              font-size: 2em;
               margin-top: 0;
-              margin-bottom: 300px;
               transition: font-size 3s ease;
+              text-align: center;
+              margin: 0;
+              margin-bottom: 0.5em;
             }
 
             &.done {
               h2 {
                 display: inline;
                 font-size: 3em;
-                margin-bottom: 2em;
               }
             }
           }
@@ -42,11 +74,14 @@ body {
       }
     }
 
-    nav {
+    nav.primary {
       background-color: $nav-bg;
       color: $nav-text-color;
-      height: $nav-height;
-      position: relative;
+      width: 100%;
+      position: absolute;
+      top: -2000px;
+      transition: top 500ms ease-in-out;
+      padding-top: 65px;
 
       .avatar {
         border-radius: 50%;
@@ -54,29 +89,16 @@ body {
         margin-left: 5px;
       }
 
-      .toggle-menu {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        color: $nav-text-color;
-        font-size: 2em;
-      }
       ul {
         background-color: $nav-bg;
         margin: 0;
         padding: 0 0;
-        position: absolute;
         width: 100%;
-        top: $nav-height;
-        display: none;
-        &.open {
-          display: block;
-        }
         li {
           list-style-type: none;
           cursor: pointer;
           text-align: center;
-          margin-bottom: 2em;
+          margin-bottom: 1.2em;
           a {
             display: block;
             color: $nav-text-color;
@@ -96,6 +118,31 @@ body {
       }
       img {
         width: 80px;
+      }
+    }
+
+    nav.secondary {
+      position: fixed;
+      right: 10px;
+      top: 45%;
+      ul {
+        li {
+          list-style-type: none;
+          margin-bottom: 1em;
+          a {
+            display: block;
+            border: 1px solid $nav-second-default;
+            background-color: $nav-second-default;
+            border-radius: 100%;
+            width: 12px;
+            height: 12px;
+            text-decoration: none;
+            &.active {
+              background-color: $nav-second-active;
+              border-color: $nav-second-active;
+            }
+          }
+        }
       }
     }
   }
